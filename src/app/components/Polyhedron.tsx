@@ -1,12 +1,17 @@
 import React, { useRef, useEffect, useState, useMemo } from 'react'
 import * as THREE from 'three'
 import { useFrame } from '@react-three/fiber'
-const Box = ({position, name, wireFrame}: {position: [number, number, number], name: string, wireFrame: boolean}) => {
+const Polyhedron = ({position, name, wireFrame}: {position: [number, number, number], name: string, wireFrame: boolean}) => {
   const [count, setCount] = useState(0)
   
   const instanceRef = useRef<THREE.Mesh>(new THREE.Mesh())
   const materialRef = useRef<THREE.MeshBasicMaterial>(new THREE.MeshBasicMaterial())
-  const geometry  = useMemo(() => [new THREE.BoxGeometry(), new THREE.SphereGeometry(0.785)], [])
+  const geometry  = useMemo(() => [
+    new THREE.BoxGeometry(), 
+    new THREE.SphereGeometry(0.785),
+    new THREE.DodecahedronGeometry(0.7853)
+  ],
+    [])
   useEffect(() => {
     console.log(instanceRef.current.geometry.uuid)
   }, [])
@@ -21,25 +26,14 @@ const Box = ({position, name, wireFrame}: {position: [number, number, number], n
     }
 
   })
-  // useFrame((_,delta:number) => {
-  //   instanceRef.current.rotation.x += delta
-  //   instanceRef.current.rotation.y += delta
-  //   instanceRef.current.position.y = Math.sin(state.clock.getElapsedTime())
 
-  // })
-
-   // useFrame(() => {
-  //   instanceRef.current.rotation.x += 0.01
-  //   instanceRef.current.rotation.y += 0.01
-
-  // })
   return (
     <mesh 
     position={position} 
     name={name} ref={instanceRef}
     scale={hovered ? 1.5 : 1}
     onPointerDown={() => {
-      setCount((count + 1)%2)
+      setCount((count + 1)%3)
     }}
     // onPointerUp={(e) => {
     //   setRotate(false)
@@ -55,10 +49,9 @@ const Box = ({position, name, wireFrame}: {position: [number, number, number], n
     }}
     geometry={geometry[count]}
     >
-  {/* <boxGeometry /> */}
           <meshBasicMaterial color={hovered ? 0xff0000 : 0x00ff00} wireframe={wireFrame} ref={materialRef} />
         </mesh>
   )
 }
 
-export default Box
+export default Polyhedron
