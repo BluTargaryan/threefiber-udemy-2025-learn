@@ -26,6 +26,12 @@ export default function Lights() {
             }
         },
       },
+      intensity: {
+        value: 1.0,
+        min: 0,
+        max: 1.0,
+        step: 0.1,
+      },
     }), [])
 
     const directionalControls = useMemo(() => ({
@@ -38,7 +44,7 @@ export default function Lights() {
         },
       },
       position: {
-        value: { x: 1, y: 1, z: 1 },
+        value: { x: 5, y: 5, z: 5 },
         onChange: (v: THREE.Vector3) => {
           if (directionalRef.current) {
             directionalRef.current.position.copy(v)
@@ -50,6 +56,14 @@ export default function Lights() {
         onChange: (v: string) => {
           if (directionalRef.current) {
             directionalRef.current.color = new THREE.Color(v)
+          }
+        },
+      },
+      castShadow: {
+        value: true,
+        onChange: (v: boolean) => {
+          if (directionalRef.current) {
+            directionalRef.current.castShadow = v
           }
         },
       },
@@ -80,6 +94,14 @@ export default function Lights() {
           }
         },
       },
+      castShadow: {
+        value: true,
+        onChange: (v: boolean) => {
+          if (pointRef.current) {
+            pointRef.current.castShadow = v
+          }
+        },
+      },
     }), [])
 
     const spotControls = useMemo(() => ({
@@ -107,6 +129,14 @@ export default function Lights() {
           }
         },
       },
+      castShadow: {
+        value: true,
+        onChange: (v: boolean) => {
+          if (spotRef.current) {
+            spotRef.current.castShadow = v
+          }
+        },
+      },
     }), [])
 
     useControls('Ambient Light', ambientControls)
@@ -117,7 +147,8 @@ export default function Lights() {
     return (
       <>
         <ambientLight ref={ambientRef} />
-        <directionalLight ref={directionalRef} />
+        <directionalLight 
+          ref={directionalRef}  />
         <pointLight ref={pointRef} />
         <spotLight ref={spotRef} />
       </>

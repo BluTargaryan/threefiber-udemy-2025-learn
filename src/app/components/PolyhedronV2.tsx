@@ -49,7 +49,7 @@ export default function Polyhedron({name, position, material}: {name: string, po
   })
 
   return (
-    <mesh name={name} position={position} material={material} ref={ref}>
+    <mesh name={name} position={position} material={material} ref={ref} castShadow receiveShadow>
       <icosahedronGeometry args={[1, 1]} />
     </mesh>
   )
