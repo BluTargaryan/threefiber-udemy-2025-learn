@@ -12,7 +12,7 @@ import BoxKybrdCanvas from "./components/BoxKybrdCanvas";
 export default function Home() {
   return (
     <div className="h-screen w-screen">
-      <BoxKybrdCanvas />
+      <BoxKybrdCanvas/>
     </div>
   );
 }
