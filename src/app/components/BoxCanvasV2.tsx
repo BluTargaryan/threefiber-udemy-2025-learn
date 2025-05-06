@@ -1,14 +1,17 @@
+'use client'
+
 import { Canvas, useLoader } from '@react-three/fiber'
 import PolyhedronV2 from './PolyhedronV2'
 import * as THREE from 'three'
 import { Stats, OrbitControls} from '@react-three/drei'
 import Lights from './Lights'
 import Floor from './Floor'
-export default function App() {
+import { Suspense } from 'react'
+
+function Scene() {
   const texture = useLoader(THREE.TextureLoader, '/grid.png')
   return (
-    <Canvas camera={{ position: [-1, 4, 2.5] }} shadows>
-      {/* <directionalLight position={[1, 1, 1]} /> */}
+    <>
       <Lights />
       {/* <PolyhedronV2
         name="meshBasicMaterial"
@@ -59,6 +62,16 @@ export default function App() {
       <axesHelper args={[5]} />
       <gridHelper />
       <Stats />
+    </>
+  )
+}
+
+export default function BoxCanvasV2() {
+  return (
+    <Canvas camera={{ position: [-1, 4, 2.5] }} shadows>
+      <Suspense fallback={null}>
+        <Scene />
+      </Suspense>
     </Canvas>
   )
 }

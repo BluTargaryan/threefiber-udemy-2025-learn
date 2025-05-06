@@ -1,3 +1,5 @@
+'use client'
+
 import { Canvas } from '@react-three/fiber'
 import Box from './Box4Kybrd'
 import { Stats, OrbitControls } from '@react-three/drei'

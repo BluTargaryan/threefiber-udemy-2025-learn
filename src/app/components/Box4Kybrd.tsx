@@ -1,3 +1,5 @@
+'use client'
+
 import { useRef, useState, useEffect } from 'react'
 import { useFrame } from '@react-three/fiber'
 import { Mesh, Vector3Tuple } from 'three'
@@ -31,11 +33,21 @@ export default function Box({ selected, keyMap, position }: BoxProps) {
   })
 
   useEffect(() => {
+    if (typeof document === 'undefined') return;
+
+    const setCursor = (style: string) => {
+      document.body.style.cursor = style;
+    };
+
     if (isHovered) {
-      document.body.style.cursor = 'pointer'
+      setCursor('pointer');
     } else {
-      document.body.style.cursor = 'default'
+      setCursor('default');
     }
+
+    return () => {
+      setCursor('default');
+    };
   }, [isHovered])
 
   return (
