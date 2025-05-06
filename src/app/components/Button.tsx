@@ -3,9 +3,18 @@ import { useFrame } from '@react-three/fiber'
 import { MathUtils } from 'three'
 import { Color, MeshPhysicalMaterial } from 'three'
 import { Mesh } from 'three'
+import { ThreeElements } from '@react-three/fiber'
 
 const black = new Color('black')
-export default function Button(props: any) {
+
+interface ButtonProps extends Omit<ThreeElements['mesh'], 'ref'> {
+  onClick?: () => void;
+  position?: [number, number, number];
+  rotation?: [number, number, number];
+  scale?: number | [number, number, number];
+}
+
+export default function Button({ onClick, ...props }: ButtonProps) {
   const ref = useRef<Mesh>(null)
   const [hovered, setHovered] = useState(false)
   const [selected, setSelected] = useState(false)
@@ -34,7 +43,8 @@ export default function Button(props: any) {
       {...props}
       ref={ref}
       onPointerDown={() => {
-        setSelected(!selected)
+        setSelected(!selected);
+        onClick?.();
       }}
       onPointerOver={() => setHovered(true)}
       onPointerOut={() => setHovered(false)}

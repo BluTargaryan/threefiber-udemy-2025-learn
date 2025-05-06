@@ -1,4 +1,4 @@
-import { Canvas, useThree, useFrame } from '@react-three/fiber'
+import { Canvas, useFrame } from '@react-three/fiber'
 import { Vector3 } from 'three'
 import { Stats, Environment, Center } from '@react-three/drei'
 import Button from './Button'

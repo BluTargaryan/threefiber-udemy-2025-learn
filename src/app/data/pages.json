@@ -1,12 +1,40 @@
 {
     "pages": [
         {
-            "name": "Home",
+            "name": "Box",
             "path": "/"
         },
         {
-            "name": "About",
-            "path": "/about"
+            "name": "Lights",
+            "path": "/lights"
+        },
+        {
+            "name": "GLTF",
+            "path": "/gltf"
+        },
+        {
+            "name": "GLDiamonds",
+            "path": "/gldiamonds"
+        },
+        {
+            "name": "Tools",
+            "path": "/tools"
+        },
+        {
+            "name": "Labelled Tools",
+            "path": "/labelledtools"
+        },
+        {
+            "name": "Shoe",
+            "path": "/shoe"
+        },
+        {
+            "name": "Diamonds",
+            "path": "/diamonds"
+        },
+        {
+            "name": "WSAD",
+            "path": "/wsad"
         }
     ]
 }

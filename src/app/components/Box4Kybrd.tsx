@@ -14,11 +14,19 @@ export default function Box({ selected, keyMap, position }: BoxProps) {
   const [isHovered, setIsHovered] = useState(false)
 
   useFrame((_, delta) => {
-    if (ref.current) {
-      keyMap['KeyA'] && isSelected && (ref.current.position.x -= 1 * delta)
-      keyMap['KeyD'] && isSelected && (ref.current.position.x += 1 * delta)
-      keyMap['KeyW'] && isSelected && (ref.current.position.z -= 1 * delta)
-      keyMap['KeyS'] && isSelected && (ref.current.position.z += 1 * delta)
+    if (!ref.current || !isSelected) return;
+    
+    if (keyMap['KeyA']) {
+      ref.current.position.x -= 1 * delta;
+    }
+    if (keyMap['KeyD']) {
+      ref.current.position.x += 1 * delta;
+    }
+    if (keyMap['KeyW']) {
+      ref.current.position.z -= 1 * delta;
+    }
+    if (keyMap['KeyS']) {
+      ref.current.position.z += 1 * delta;
     }
   })
 
@@ -31,9 +39,12 @@ export default function Box({ selected, keyMap, position }: BoxProps) {
   }, [isHovered])
 
   return (
-    <mesh ref={ref} onPointerDown={() => setIsSelected(!isSelected)} position={position}
-    onPointerOver={() => setIsHovered(true)}
-    onPointerOut={() => setIsHovered(false)}
+    <mesh 
+      ref={ref} 
+      onPointerDown={() => setIsSelected(!isSelected)} 
+      position={position}
+      onPointerOver={() => setIsHovered(true)}
+      onPointerOut={() => setIsHovered(false)}
     >
       <boxGeometry />
       <meshBasicMaterial color={0x00ff00} wireframe={!isSelected} />

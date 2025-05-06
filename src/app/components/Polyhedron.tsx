@@ -1,6 +1,5 @@
-import React, { useRef, useEffect, useState, useMemo } from 'react'
+import React, { useRef, useEffect, useState } from 'react'
 import * as THREE from 'three'
-import { useFrame } from '@react-three/fiber'
 
 const Polyhedron = ({position, name, wireFrame, polyhedron, rotation, visible, color}: {position: [number, number, number], name: string, wireFrame: boolean, polyhedron: THREE.BufferGeometry[], rotation: [number, number, number], visible: boolean, color: string}) => {
   const [count, setCount] = useState(0)
@@ -13,7 +12,7 @@ const Polyhedron = ({position, name, wireFrame, polyhedron, rotation, visible, c
   }, [])
 
   const [hovered, setHovered] = useState(false)
-  const [rotate, setRotate] = useState(false)
+  // const [rotate, setRotate] = useState(false)
 
   // useFrame((_,delta:number) => {
   //     instanceRef.current.rotation.x += delta

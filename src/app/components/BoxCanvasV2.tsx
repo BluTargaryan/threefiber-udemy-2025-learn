@@ -1,7 +1,7 @@
 import { Canvas, useLoader } from '@react-three/fiber'
 import PolyhedronV2 from './PolyhedronV2'
 import * as THREE from 'three'
-import { Stats, OrbitControls, Polyhedron } from '@react-three/drei'
+import { Stats, OrbitControls} from '@react-three/drei'
 import Lights from './Lights'
 import Floor from './Floor'
 export default function App() {

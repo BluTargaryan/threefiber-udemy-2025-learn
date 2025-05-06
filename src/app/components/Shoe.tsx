@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useGLTF } from '@react-three/drei'
 import { useControls } from 'leva'
-import { Color, Mesh, Material, MeshStandardMaterial } from 'three'
+import { Color, Mesh,  MeshStandardMaterial } from 'three'
 import { ThreeEvent } from '@react-three/fiber'
 import { GLTF } from 'three-stdlib'
 

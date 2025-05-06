@@ -1,6 +1,5 @@
 import React, { useRef, useEffect, useState, useMemo } from 'react'
 import * as THREE from 'three'
-import { useFrame } from '@react-three/fiber'
 const Box = ({position, name, wireFrame}: {position: [number, number, number], name: string, wireFrame: boolean}) => {
   const [count, setCount] = useState(0)
   
@@ -12,15 +11,15 @@ const Box = ({position, name, wireFrame}: {position: [number, number, number], n
   }, [])
 
   const [hovered, setHovered] = useState(false)
-  const [rotate, setRotate] = useState(false)
+  // const [rotate, setRotate] = useState(false)
 
-  useFrame((_,delta:number) => {
-    if(rotate) {
-      instanceRef.current.rotation.x += delta
-      instanceRef.current.rotation.y += delta
-    }
+  // useFrame((_,delta:number) => {
+  //   if(rotate) {
+  //     instanceRef.current.rotation.x += delta
+  //     instanceRef.current.rotation.y += delta
+  //   }
 
-  })
+  // })
   // useFrame((_,delta:number) => {
   //   instanceRef.current.rotation.x += delta
   //   instanceRef.current.rotation.y += delta

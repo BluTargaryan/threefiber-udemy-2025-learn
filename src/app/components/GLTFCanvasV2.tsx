@@ -1,12 +1,10 @@
 import {
     Stats,
     OrbitControls,
-    Environment,
     ContactShadows,
   } from '@react-three/drei'
-  import { Canvas, useLoader } from '@react-three/fiber'
-  import { GLTFLoader } from 'three-stdlib'
-  import { Leva, useControls } from 'leva'
+  import { Canvas} from '@react-three/fiber'
+  import { Leva} from 'leva'
   import Model from './SceneModelGLTF'
   import Env from './SceneEnvGLTF'
   

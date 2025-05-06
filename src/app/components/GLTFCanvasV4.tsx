@@ -1,10 +1,8 @@
 import { Canvas } from '@react-three/fiber'
 import {
-  useGLTF,
   OrbitControls,
   Environment,
-  Stats,
-  Html,
+  Stats
 } from '@react-three/drei'
 import { useControls } from 'leva'
 import Models from '../data/models.json'
