@@ -3,12 +3,12 @@ import { Canvas, useLoader } from '@react-three/fiber'
 import { GLTFLoader } from 'three-stdlib'
 
 export default function App() {
-  const gltf = useLoader(GLTFLoader, './monkey.glb')
+  const gltf = useLoader(GLTFLoader, '/monkey.glb')
 
   return (
     <Canvas camera={{ position: [-0.5, 1, 2] }} shadows>
          <Environment
-        files="./venice_sunset_1k.hdr"
+        files="/venice_sunset_1k.hdr"
         background
         backgroundBlurriness={0.5}
       />
