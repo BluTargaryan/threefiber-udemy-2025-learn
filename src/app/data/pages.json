@@ -1,39 +1,39 @@
 {
     "pages": [
         {
-            "name": "Box",
+            "name": "Geometry & Leva Controls",
             "path": "/"
         },
         {
-            "name": "Lights",
+            "name": "Materials & Textures",
             "path": "/lights"
         },
         {
-            "name": "GLTF",
+            "name": "GLTF Model Loader",
             "path": "/gltf"
         },
         {
-            "name": "GLDiamonds",
+            "name": "GLTF Scene & Shadows",
             "path": "/gldiamonds"
         },
         {
-            "name": "Tools",
+            "name": "Dynamic Model Switching",
             "path": "/tools"
         },
         {
-            "name": "Labelled Tools",
+            "name": "3D HTML Annotations",
             "path": "/labelledtools"
         },
         {
-            "name": "Shoe",
+            "name": "Material Color Customization",
             "path": "/shoe"
         },
         {
-            "name": "Diamonds",
+            "name": "Camera Lerp & Pointer Rig",
             "path": "/diamonds"
         },
         {
-            "name": "WSAD",
+            "name": "Keyboard Input Control",
             "path": "/wsad"
         }
     ]
