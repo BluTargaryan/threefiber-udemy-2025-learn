@@ -5,6 +5,10 @@
             "path": "/"
         },
         {
+            "name": "Scroll-Driven 3D Interaction",
+            "path": "/scroll-interaction"
+        },
+        {
             "name": "Materials & Textures",
             "path": "/lights"
         },
