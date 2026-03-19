@@ -10,7 +10,8 @@ export default function App() {
       <Environment preset="forest" />
       <Model />
       <ContactShadows position={[0, -0.8, 0]} color="#ffffff" />
-      <OrbitControls autoRotate />
+      {/* <OrbitControls autoRotate /> */}
+      <OrbitControls />
     </Canvas>
   )
 }
